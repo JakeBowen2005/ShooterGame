@@ -8,6 +8,8 @@
 
 // cd Desktop/SFML/ShooterGame/ShooterGame
 
+//Just random comments
+
 using namespace std;
 using namespace sf;
 
