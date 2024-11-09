@@ -101,8 +101,14 @@ int main() {
         
         //Update
         playerCenter = Vector2f(player.getPosition().x + player.getRadius(), player.getPosition().y + player.getRadius());
-        
         player.setPosition(Mouse::getPosition(window).x, player.getPosition().y);
+        
+        if (player.getPosition().x < 0) {
+            player.setPosition(0.f, player.getPosition().y);
+        }
+        if (player.getPosition().x + player.getRadius() > screen_width) {
+            player.setPosition(screen_width - player.getRadius()*2, player.getPosition().y);
+        }
         
         //Projectiles
         if (shootTimer < 10) {
